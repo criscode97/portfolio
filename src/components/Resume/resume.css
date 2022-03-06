@@ -1,0 +1,123 @@
+.resume {
+  background-color: transparent;
+  display: fixed;
+  height: 100vh;
+  margin-bottom: 10%;
+}
+
+.resume .accordion {
+  width: 100vw;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20vh;
+}
+
+.resume .accordion .item {
+  color: transparent;
+  margin-bottom: 0px;
+  padding: 10px 10px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.resume .accordion .item .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3vh;
+  color: grey;
+  text-decoration: none;
+}
+
+.resume .accordion .item .content {
+  color: black;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.resume .accordion .item .contentShow {
+  color: black;
+  height: auto;
+  max-height: 9999px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+.resume .accordion .item .downloadPDF {
+  margin: 0% 47%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 5.5vw;
+  height: 4vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  border: 0.15vw solid grey;
+  font-family: Comfortaa;
+  text-align: center;
+}
+
+.resume .accordion .item .downloadPDF h4 {
+  font-family: Comfortaa;
+  font-weight: bold;
+  font-size: 2vh;
+  color: grey;
+}
+
+.resume .accordion .item .downloadPDF:hover {
+  background-color: grey;
+  border: 0.2vw solid grey;
+}
+
+.resume .accordion .item .downloadPDF:hover h4 {
+  font-family: Comfortaa;
+  font-weight: bold;
+  font-size: 2vh;
+  color: #D9F3FB;
+}
+/*# sourceMappingURL=resume.css.map */

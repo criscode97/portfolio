@@ -1,0 +1,107 @@
+.mainpage {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mainpage .left {
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5;
+  position: absolute;
+  width: 40vw;
+  height: 90%;
+  overflow: hidden;
+}
+
+.mainpage .left .imgContainer {
+  margin-top: 30%;
+  margin-left: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+  position: absolute;
+  width: 18vw;
+  height: 50vh;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background-color: #775CA4;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.mainpage .left .imgContainer img {
+  height: 100%;
+}
+
+.mainpage .right {
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5;
+  position: absolute;
+  width: 57vw;
+  height: 90%;
+  left: 45vw;
+  top: 18vw;
+}
+
+.mainpage .right h1 {
+  font-family: Consolas;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3vw;
+  line-height: 18%;
+  /* or 86px */
+  color: #000000;
+}
+
+.mainpage .right h2 {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2vw;
+  line-height: 180%;
+  /* or 86px */
+  color: #4e4a4a;
+}
+
+.mainpage .right .ityped-cursor {
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=mainpage.css.map */

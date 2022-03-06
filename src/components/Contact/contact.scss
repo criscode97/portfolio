@@ -1,0 +1,16 @@
+@import  "../../global.scss";
+
+.box {
+    position:relative;
+    
+    .bar {
+        display: flex;
+        position: fixed;
+        bottom: 12px;
+        right:70px;
+        flex-direction: row;
+        z-index: 3;
+
+        
+    }
+}

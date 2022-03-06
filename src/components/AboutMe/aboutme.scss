@@ -1,0 +1,22 @@
+.aboutme{
+    background-color: transparent;
+    display: fixed;
+
+    .textcontainer {
+        position: absolute;
+        align-items: center;
+        padding: 10.5vw 8vw 2vw;
+
+        h2 {
+            font-family: Comfortaa;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 2vw;
+            line-height: 180%;
+            text-align: center;
+            color: #000000;
+
+        }
+        
+    }
+}

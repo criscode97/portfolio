@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.navbar {
+  margin: 0vw;
+  width: 95%;
+  position: fixed;
+  height: 8vw;
+  top: 0;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  z-index: 4;
+}
+
+.navbar .wrapper {
+  padding: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .wrapper .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .wrapper .left .name {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3vw;
+  color: #25282B;
+  text-decoration: none;
+}
+
+.navbar .wrapper .left .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.navbar .wrapper .left .right .titles {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+a {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5vw;
+  text-decoration: none;
+  padding: 16px;
+  color: #25282B;
+}
+
+a:hover {
+  font-weight: 500;
+  color: #81858a;
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,145 @@
+.education {
+  padding: 2vw;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0% 10%;
+}
+
+.education .college {
+  width: 20vw;
+  height: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2%;
+  padding-top: 3%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-radius: 20px;
+  border: 0.2vw solid grey;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.education .college hr {
+  border: 1px solid grey;
+  width: 80%;
+}
+
+.education .college ul {
+  list-style-type: none;
+  font-family: Comfortaa;
+  padding: 1vw;
+  color: #3f3e3e;
+}
+
+.education .college li {
+  margin: 5%;
+}
+
+.education .college li .heading {
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.education .selfTaught {
+  width: 40vw;
+  height: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2%;
+  padding-top: 3%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-radius: 20px;
+  border: 0.2vw solid grey;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.education .selfTaught hr {
+  border: 1px solid grey;
+  width: 80%;
+}
+
+.education .selfTaught .courseWrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.education .selfTaught .courseWrapper .leftWrapper ul {
+  list-style-type: none;
+  font-family: Comfortaa;
+  padding: 0.5vw;
+  color: #3f3e3e;
+  text-align: left;
+}
+
+.education .selfTaught .courseWrapper .leftWrapper ul li {
+  margin: 3%;
+}
+
+.education .selfTaught .courseWrapper .leftWrapper ul li a {
+  font-size: inherit;
+  text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  margin-left: 0%;
+}
+
+.education .selfTaught .courseWrapper .rightWrapper ul {
+  list-style-type: none;
+  font-family: Comfortaa;
+  padding: 0.5vw;
+  color: #3f3e3e;
+  text-align: left;
+}
+
+.education .selfTaught .courseWrapper .rightWrapper ul li {
+  margin: 3%;
+}
+
+.education .selfTaught .courseWrapper .rightWrapper ul li a {
+  font-size: inherit;
+  text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  margin-left: 0%;
+}
+/*# sourceMappingURL=education.css.map */

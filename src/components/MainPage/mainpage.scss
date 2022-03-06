@@ -1,0 +1,83 @@
+@import "../../global.scss";
+
+.mainpage {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        flex: 0.5;
+        position: absolute;
+        width: 40vw;
+        height: 90%;
+        overflow: hidden;
+
+        .imgContainer{
+            margin-top: 30%;
+            margin-left: 40%;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            position: absolute;
+            width: 18vw;
+            height: 50vh;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;;
+            // border: 2vw solid grey;
+            background-color: #775CA4;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+            // box-shadow: #785ca46b -5px 5px, #785ca452 -10px 10px, #785ca438 -15px 15px, #785ca42a -20px 20px, #785ca423 -25px 25px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .right {
+        flex: 0.5;
+        position: absolute;
+        width: 57vw;
+        height: 90%;
+        left: 45vw;
+        top: 18vw;
+    h1 {
+        font-family: Consolas;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 3vw;
+        line-height: 18%;
+        /* or 86px */
+        color: #000000;
+
+    }
+
+    h2 {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2vw;
+        line-height: 180%;
+        /* or 86px */
+
+
+        color: #4e4a4a;
+
+    }
+
+    .ityped-cursor {
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
+    }
+}

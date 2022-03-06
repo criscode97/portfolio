@@ -1,0 +1,18 @@
+.box {
+  position: relative;
+}
+
+.box .bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 12px;
+  right: 70px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  z-index: 3;
+}
+/*# sourceMappingURL=contact.css.map */

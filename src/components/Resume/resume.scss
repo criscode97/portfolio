@@ -1,0 +1,95 @@
+@import "../../global";
+
+.resume {
+    background-color: transparent;
+    display: fixed;
+    height: 100vh;
+    margin-bottom: 10%;
+
+    .accordion {
+        width: 100vw;
+        position: absolute;
+        align-items: center;
+        padding-top: 20vh;
+
+        .item {
+            color: transparent;
+            margin-bottom: 0px;
+            padding: 10px 10px;
+            align-content: center;
+            transition: all 1s ease-in-out;
+
+
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-family: Comfortaa;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 3vh;
+                color: grey;
+                text-decoration: none;
+            }
+
+            .content{
+                color: black;
+                max-height: 0;
+                overflow: hidden;
+                justify-content: center;
+                align-self: center;
+                align-items: center;
+                text-align: center;
+                transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+            }
+
+            .contentShow {
+                color: black;
+                height: auto;
+                max-height: 9999px;
+                align-self: center;
+                align-items: center;
+                text-align: center;
+                transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+            }
+
+            .downloadPDF {
+                margin: 0% 47%;
+                align-self: center;
+                width: 5.5vw;
+                height: 4vh;
+                display: flex;
+                flex-direction: row;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                border: 0.15vw solid grey;
+                font-family: Comfortaa;
+                text-align: center;
+                // box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+                
+                h4 {
+                    font-family: Comfortaa;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    color: grey;
+                    
+                }
+                &:hover{
+                    background-color: grey;
+                    border: 0.2vw solid grey;
+                    h4 {
+                        font-family: Comfortaa;
+                        font-weight: bold;
+                        font-size: 2vh;
+                        color: $backgroundcolor;
+                    }
+                }
+            
+            }
+        }
+
+    }
+}

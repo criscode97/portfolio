@@ -1,0 +1,61 @@
+@import  "../../../global.scss";
+
+.containerSkills {
+    padding: 2vw 8vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    max-height: 9999px;
+    transition: height 2s;
+   
+    .category{
+        width: 20vw;
+        height: 45vh;
+        display: flex;
+        padding: 0vw;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 20px;
+        border: 0.2vw solid grey;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        max-height: 9999px;
+        transition: height 2s;
+
+        .categorytitle {
+            font-family: Comfortaa;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.5vw;
+            color: rgb(72, 74, 80);
+            text-decoration: none;
+            transition: height 2s;
+            
+        }
+        hr{
+            border: 1px solid grey;
+            
+        }
+        .iconWrapper{
+            align-items: center;
+            width: 15vw;
+            height: 25vh;
+            flex-wrap: wrap;
+            padding: 5px;
+            list-style: none;
+            display: flex;
+            transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+
+
+            .imgicon {
+                align-self: center;
+                padding: 0.5vw;
+                align-items: center;
+                transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+                
+            }
+
+        }
+        
+    }
+}

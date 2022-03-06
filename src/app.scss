@@ -1,0 +1,33 @@
+@import  "./global.scss";
+
+html {
+    scroll-behavior: smooth;
+    background-color: $backgroundcolor;
+    overflow-x: hidden;
+    
+  }
+
+
+.main {
+    background-color: transparent; 
+    background-size: auto;
+    
+    .sections{
+        margin:0;
+        background-color: transparent;
+        position: relative;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none; //for firefox
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        > *{
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+        }
+    }
+}
+
