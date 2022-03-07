@@ -13,13 +13,13 @@ export const projects =[
     },
     {
         'title': 'Django CRUD API',
-        'image': 'assets/me.png',
+        'image': 'assets/budgetin.gif',
         'code': 'https://github.com/criscode97/BudgetInApi-repo',
         'demo': 'https://youtu.be/2_4OXnU8s8w'
     },
     {
         'title': 'Portfolio Website',
-        'image': 'assets/me.png',
+        'image': 'assets/portfolio.png',
         'code': 'https://github.com/criscode97',
         'demo': 'criscodes.dev'
     }
