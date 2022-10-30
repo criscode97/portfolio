@@ -10,7 +10,7 @@
     .leftSide{
         width: 20vw;
         height: 120%;
-        left: 15vw;
+        left: 30vw;
         background-image: linear-gradient(270deg, transparent, $backgroundcolor 10%);
         position: absolute;
     }
@@ -18,7 +18,7 @@
     .rightSide {
         width:20vw;
         height: 120%;
-        right: 15vw;
+        right: 35vw;
         background-image: linear-gradient(90deg, transparent, $backgroundcolor 10%);
         position: absolute;
         z-index: 2;
@@ -31,7 +31,7 @@
         color: grey;
         font-weight: 50;
         z-index: 3;
-        left: 30vw;
+        left: 45vw;
 
         &:hover{
             color: black;
@@ -49,7 +49,7 @@
         color: grey;
         font-weight: 50;
         z-index: 2;
-        right: 30vw;
+        right: 50vw;
 
         &:hover{
             color: black;
@@ -62,7 +62,7 @@
     padding-top: 2vw;
     display: flex;
     position: relative;
-    left: 45vw;
+    left: 50vw;
     transition: all 1s ease-out;
 
     .container {

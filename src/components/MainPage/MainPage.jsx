@@ -29,7 +29,7 @@ function MainPage() {
                     <h1 ref={textRef}></h1>
                     <h2>
                         I'm Cris,<br/>
-                        A Software Developer.
+                        A Data Engineer.
                     </h2>
                 </div>
             </div>

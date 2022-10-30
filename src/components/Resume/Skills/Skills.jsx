@@ -12,6 +12,12 @@ function Skills() {
                     <img src="assets/icons/pythonicon.png" width = "35px" height = "35px" />
                 </div>
                 <div className="imgicon">
+                    <img src="assets/icons/airflow_transparent.png" width = "35px" height = "35px" />
+                </div>
+                <div className="imgicon">
+                    <img src="assets/icons/Apache_Spark_logo.svg.png"  width = "55px" height = "30px" />
+                </div>
+                <div className="imgicon">
                     <img src="assets/icons/flaskicon.png" width = "35px" height = "35px"/>
                 </div>
                 <div className="imgicon">
