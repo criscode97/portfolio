@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-@import  "../../global.scss";
+@import "../../global.scss";
 
 .navbar { 
-    margin:0vw;
-    width: 95%;
+    margin: 0;
+    width: 100vw;
     position: fixed;
     height: 8vw;
     top: 0;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.05vw);
     z-index: 4;
-    
+
     .wrapper {
-        padding: 20px 20px;
+        padding: 1.04vw 1.04vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -20,7 +20,7 @@
         .left {
             display: flex;
             align-items: center;
-    
+
             .name {
                 font-family: Comfortaa;
                 font-style: normal;
@@ -29,38 +29,136 @@
                 color: #25282B;
                 text-decoration: none;
             }
+        }
 
         .right {
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-    
+            align-items: center;
+
             .titles {
-                flex: none;
-                order: 2;
-                flex-grow: 0;
+                display: flex;
+                flex-direction: row;
                 justify-content: space-between;
 
-                
+                a {
+                    font-family: Comfortaa;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.5vw;
+                    text-decoration: none;
+                    padding: 0.83vw;
+                    color: #25282B;
+                }
+
+                a:hover {
+                    font-weight: 500;
+                    color: #81858a;
                 }
             }
-        }       
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 3vw;
+            height: 3vw;
+
+            span {
+                background-color: #25282B;
+                height: 0.4vw;
+                width: 100%;
+                transition: 0.5s;
+            }
+
+            &.active span:nth-child(1) {
+                transform: rotate(45deg) translate(0.5vw, 0.5vw);
+            }
+
+            &.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            &.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(0.5vw, -0.5vw);
+            }
+        }
     }
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: sticky;
+        height: fit-content; // Allow navbar to adjust height based on content
+        width: 100vw;
+        z-index: 100;
+        top: 0;
+        left: 0;
     
+
+    .wrapper {
+        // flex-direction: row;
+        // width: 100%;
+
+        // justify-content: space-between;
+        .left {
+            .name {
+                font-size: 5vw;
+            }
+        }
+
+        .right {
+            position: absolute;  // Position the menu absolutely within the navbar
+            top: 100%;  // Position below the navbar
+            left: 0;
+            width: 100%;
+            background-color: $backgroundcolor;
+            overflow: hidden;
+            max-height: 0;  // Start collapsed
+            opacity: 0;
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+            z-index: -1;  // Ensure it doesn't cover the navbar when collapsed
+
+
+            &.active {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 5vh;
+                right: 0;
+                background-color: $backgroundcolor;
+                max-height: fit-content;  // Slide down
+                width: 100vw;
+                height: fit-content;
+                padding: 1vh 0;
+
+                transform: translateX(0);  // Slide into view
+                opacity: 1;  // Fade in
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+
+
+                .titles {
+                    flex-direction: column;
+
+                    a {
+                        font-size: 6vw;
+                        padding: 2vh 0;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .hamburger {
+            display: flex;
+            padding: 1vw;
+            width: 6vw;
+            height: 3vw;
+        }
+    }
 }
-
-a {
-    font-family: Comfortaa;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.5vw;
-    text-decoration: none;
-    padding: 16px;
-    color: #25282B;
-
-}
-
-a:hover {
-    font-weight: 500;
-    color: #81858a;
 }

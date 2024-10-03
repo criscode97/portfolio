@@ -1,15 +1,26 @@
 @import  "../../global.scss";
 
 .box {
-    position:relative;
+    position:fixed;
     
     .bar {
+       
         display: flex;
         position: fixed;
         bottom: 12px;
         right:70px;
         flex-direction: row;
         z-index: 3;
+
+        a {
+            margin: 0.5vw;
+            
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
 
         
     }
