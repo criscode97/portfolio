@@ -1,24 +1,47 @@
-@import  "../../global.scss";
+@import "../../global.scss";
 
 .box {
-    // position:fixed;
-    
-    .bar {
-       
-        display: flex;
-        position: fixed;
-        bottom: 12px;
-        right:70px;
-        flex-direction: row;
-        z-index: 3;
+  // position: fixed;
 
-        a svg {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
+  .bar {
+    display: flex;
+    position: fixed;
+    bottom: 0.625vw;    // 12px to 0.625vw
+    right: 3.645vw;     // 70px to 3.645vw
+    flex-direction: row;
+    z-index: 3;
 
-        }
-
-        
+    a svg {
+      width: 2.083vw;   // 40px to 2.083vw
+      height: 2.083vw;  // 40px to 2.083vw
+      margin: 0 0.521vw; // 0 10px to 0 0.521vw
+      color: black;
     }
+
+    a svg:hover {
+      color: #81858a;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    position: fixed;
+    z-index: 1000;
+    bottom: 3vh;
+    right: 0;
+
+    .bar {
+      bottom: 0.625vw;    // 12px to 0.625vw
+      right: 0.521vw;     // 10px to 0.521vw
+      position: relative;
+
+      a svg {
+        width: 5vw;   // 20px to 1.042vw
+        height: 5vw;  // 20px to 1.042vw
+        margin: 0 1vw; // 0 5px to 0 0.26vw
+        color: black;
+      }
+    }
+  }
 }

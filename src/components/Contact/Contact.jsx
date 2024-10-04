@@ -12,7 +12,7 @@ function Contact(){
                     <a href="https://www.linkedin.com/in/cristopher-soto-870106224/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedinIn />
                     </a>
-                    <a href="mailto:info@criscodes.dev" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:criscodesnyc@gmail.com" target="_blank" rel="noopener noreferrer">
                         <FaRegEnvelope />
                     </a>
                 </div>

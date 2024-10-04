@@ -10,7 +10,7 @@ function NavBar() {
 
     return (
         <div className='navbar'>
-            <div className='wrapper'>
+
                 <div className='left'>
                     <a href="#mainpage" className='name'>
                         Cristopher Soto 
@@ -35,7 +35,6 @@ function NavBar() {
                     <span></span>
                 </div>
             </div>
-        </div>
     );
 }
 

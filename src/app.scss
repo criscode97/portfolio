@@ -11,8 +11,7 @@ html {
 .main {
     background-color: transparent; 
     background-size: auto;
-    width: 100%;
-    position: absolute;
+    width: 100vw;
     
     .sections{
         margin:0;
@@ -20,13 +19,14 @@ html {
         position: relative;
         scroll-snap-type: y mandatory;
         scrollbar-width: none; //for firefox
+        width: 100vw;
 
         &::-webkit-scrollbar{
             display: none;
         }
 
         > *{
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             scroll-snap-align: start;
         }

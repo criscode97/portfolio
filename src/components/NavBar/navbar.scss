@@ -7,15 +7,16 @@
     width: 100vw;
     position: fixed;
     height: 8vw;
-    top: 0;
     backdrop-filter: blur(0.05vw);
     z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    
 
-    .wrapper {
-        padding: 1.04vw 1.04vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
 
         .left {
             display: flex;
@@ -34,6 +35,7 @@
         .right {
             display: flex;
             align-items: center;
+            padding-right: 4vw;
 
             .titles {
                 display: flex;
@@ -85,24 +87,22 @@
             }
         }
     }
-}
 
 /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
     .navbar {
-        position: sticky;
+        backdrop-filter: none;
+        position: fixed;
         height: fit-content; // Allow navbar to adjust height based on content
         width: 100vw;
         z-index: 100;
-        top: 0;
-        left: 0;
+        flex-direction: row;
+        padding: 0 1vw ;
+        padding-right: 4vw;
+        justify-content: space-between;
     
 
-    .wrapper {
-        // flex-direction: row;
-        // width: 100%;
 
-        // justify-content: space-between;
         .left {
             .name {
                 font-size: 5vw;
@@ -111,9 +111,7 @@
 
         .right {
             position: absolute;  // Position the menu absolutely within the navbar
-            top: 100%;  // Position below the navbar
-            left: 0;
-            width: 100%;
+            width: fit-content;
             background-color: $backgroundcolor;
             overflow: hidden;
             max-height: 0;  // Start collapsed
@@ -133,7 +131,6 @@
                 max-height: fit-content;  // Slide down
                 width: 100vw;
                 height: fit-content;
-                padding: 1vh 0;
 
                 transform: translateX(0);  // Slide into view
                 opacity: 1;  // Fade in
@@ -143,6 +140,7 @@
 
                 .titles {
                     flex-direction: column;
+                    
 
                     a {
                         font-size: 6vw;
@@ -155,10 +153,10 @@
 
         .hamburger {
             display: flex;
-            padding: 1vw;
+            padding-right: 5vw;
+            
             width: 6vw;
             height: 3vw;
         }
     }
-}
 }
