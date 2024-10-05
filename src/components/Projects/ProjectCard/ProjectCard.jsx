@@ -1,4 +1,4 @@
-import "./projectcard.scss"
+import "./ProjectCard.scss"
 
 function ProjectCard(props) {
 

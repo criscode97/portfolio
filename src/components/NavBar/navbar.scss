@@ -69,13 +69,13 @@
 
             span {
                 background-color: #25282B;
-                height: 0.4vw;
+                height: 0.5vw;
                 width: 100%;
                 transition: 0.5s;
             }
 
             &.active span:nth-child(1) {
-                transform: rotate(45deg) translate(0.5vw, 0.5vw);
+                transform: rotate(45deg) translate(0.9vw, 0.9vw);
             }
 
             &.active span:nth-child(2) {
@@ -83,7 +83,7 @@
             }
 
             &.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(0.5vw, -0.5vw);
+                transform: rotate(-45deg) translate(0.9vw, -0.9vw);
             }
         }
     }
