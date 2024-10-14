@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Carousel.scss'; // Make sure to create this CSS file
 
-function Carousel({ items }) {
+function Carousel({ items = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);
+  
+  // Using useRef for touch states to avoid re-renders
+  const touchStartXRef = useRef(0);
+  const touchEndXRef = useRef(0);
 
   // Update itemsPerPage based on screen width
   useEffect(() => {
@@ -38,25 +42,22 @@ function Carousel({ items }) {
     setCurrentIndex(index);
   };
 
-  // Swipe handlers
-  let touchStartX = 0;
-  let touchEndX = 0;
-
+  // Swipe handlers using useRef for touch positions
   const handleTouchStart = (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+    touchStartXRef.current = e.changedTouches[0].screenX;
   };
 
   const handleTouchEnd = (e) => {
-    touchEndX = e.changedTouches[0].screenX;
+    touchEndXRef.current = e.changedTouches[0].screenX;
     handleGesture();
   };
 
   const handleGesture = () => {
-    if (touchEndX < touchStartX - 50) {
+    if (touchEndXRef.current < touchStartXRef.current - 50) {
       nextSlide();
     }
 
-    if (touchEndX > touchStartX + 50) {
+    if (touchEndXRef.current > touchStartXRef.current + 50) {
       prevSlide();
     }
   };

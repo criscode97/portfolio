@@ -38,7 +38,7 @@ const projects =[
 ]
 function Projects() {
     return (
-        <section id='projects'>
+        <section id='projects' className="projects">
              <Carousel items={projects.map(project => <ProjectCard
                 image={project.image}
                 title={project.title}

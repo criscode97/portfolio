@@ -1,69 +1,81 @@
-/* Carousel.css */
-
 .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  
-  .carousel-content {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .carousel-item {
-    flex: 1;
-    min-width: calc(100% / 4); /* Default to 4 items per page */
-  }
-  
-  .arrow {
-    background: none;
-    border: none;
-    color: grey;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  
-  .arrow.left {
+  // position: relative;
+  width: 100%;
+  height: fit-content;
+  overflow: visible; 
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-content {
+  display: flex;
+  overflow: visible;
+  width: 100%;
+  padding: 0 5vw;
+}
+
+// You can uncomment and modify as needed
+// .carousel-item {
+//   margin: 0 1vw;
+//   // flex: 1;
+//   // min-width: calc(100% / 4); // Default to 4 items per page
+// }
+
+.arrow {
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &.left {
     position: absolute;
     left: 0;
   }
-  
-  .arrow.right {
+
+  &.right {
     position: absolute;
-    right: 0;
+    right: 1vw;
   }
-  
-  .dots-container {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: grey;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .dot.active {
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+
+  &.active {
     background-color: black;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .carousel-item {
-      min-width: 100%; /* Show one item per page on mobile */
-    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .carousel-content {
+    padding: 0 2vw; // Adjust padding on mobile
   }
-  
+
+  .carousel-item {
+    min-width: 100%; // Show one item per page on mobile
+    width: 100%;
+  }
+
+  .arrow {
+    display: none;  // Hide arrows on mobile
+  }
+}
