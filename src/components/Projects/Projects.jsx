@@ -1,4 +1,4 @@
-import "./Projects.scss";
+import "Projects.scss";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import Carousel from "../Carousel/Carousel";
 
