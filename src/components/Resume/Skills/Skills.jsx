@@ -1,97 +1,67 @@
 import "./skills.scss";
 
+const categories = [
+    {
+        title: "Cloud & AWS",
+        icon: "assets/icons/awsicon.png",
+        skills: [
+            "Lambda", "Glue", "EMR", "Kinesis", "S3", "SES", "SNS",
+            "CloudWatch", "Cognito", "CloudFormation", "Amplify",
+            "Textract", "Connect", "DynamoDB", "Pinpoint", "RDS",
+        ],
+    },
+    {
+        title: "Data & Warehousing",
+        icon: "assets/icons/postgresqlicon.png",
+        skills: [
+            "PostgreSQL", "Aurora", "Redshift", "DynamoDB",
+            "Star-schema modeling", "SQLite",
+        ],
+    },
+    {
+        title: "Data Engineering",
+        icon: "assets/icons/airflow_transparent.png",
+        skills: [
+            "Apache Airflow", "Apache Spark", "Tesseract OCR",
+            "ETL / ELT", "Streaming", "Event-driven",
+        ],
+    },
+    {
+        title: "Languages",
+        icon: "assets/icons/pythonicon.png",
+        skills: ["Python", "SQL", "JavaScript"],
+    },
+    {
+        title: "Frontend & Tools",
+        icon: "assets/icons/reacticon.png",
+        skills: [
+            "React", "Sass", "HTML", "CSS",
+            "Bootstrap", "Git", "GitHub",
+        ],
+    },
+];
+
 function Skills() {
     return (
-        <div className="containerSkills">
-            <div className="category">
-                <div className="wrapper">
-                <div className="categorytitle">Back End</div>
-                <hr></hr>
-                <div className="iconWrapper">
-                <div className="imgicon">
-                    <img src="assets/icons/pythonicon.png" width = "35px" height = "35px" />
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/airflow_transparent.png" width = "35px" height = "35px" />
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/Apache_Spark_logo.svg.png"  width = "55px" height = "30px" />
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/flaskicon.png" width = "35px" height = "35px"/>
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/sqliteicon.png" width = "35px" height = "35px"/>
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/djangoicon.png" width = "35px" height = "35px" />
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/postgresqlicon.png" width = "35px" height = "35px" />
-                </div>
-                <div className="imgicon">
-                    <img src="assets/icons/djangoresticon.png" width = "55px" height = "30px" />
-                </div>
-                </div>
-            </div>
-        </div>
-            <div className="category">
-                <div className="wrapper">
-                    <div className="categorytitle">Front End</div>
-                    <hr></hr>
-                    <div className="iconWrapper">
-                        <div className="imgicon">
-                            <img src="assets/icons/bootstrapicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/javascripticon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/cssicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/htmlicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/reacticon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/sassicon.png" width = "35px" height = "35px" />
-                        </div>
+        <div className="skills-grid">
+            {categories.map(category => (
+                <div className="skills-card" key={category.title}>
+                    <div className="skills-card__header">
+                        <img
+                            src={category.icon}
+                            alt=""
+                            className="skills-card__icon"
+                            aria-hidden="true"
+                        />
+                        <h3 className="skills-card__title">{category.title}</h3>
                     </div>
+                    <ul className="skills-card__chips">
+                        {category.skills.map(skill => (
+                            <li key={skill}>{skill}</li>
+                        ))}
+                    </ul>
                 </div>
-            </div>
-            <div className="category">
-                <div className="wrapper">
-                    <div className="categorytitle">Others</div>
-                    <hr></hr>
-                    <div className="iconWrapper">
-                    <div className="imgicon">
-                            <img src="assets/icons/awsicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/giticon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/githubicon.png" width = "35px" height = "35px" />
-                        </div>
-                        
-                        
-                        <div className="imgicon">
-                            <img src="assets/icons/pandasicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/plotlyicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/ubuntoicon.png" width = "35px" height = "35px" />
-                        </div>
-                        <div className="imgicon">
-                            <img src="assets/icons/numpyicon.png" width = "70px" height = "25px" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
     );
 }

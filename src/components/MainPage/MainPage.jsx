@@ -1,66 +1,84 @@
 import "./mainpage.scss";
-import { init } from 'ityped';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi';
+
+const ROLES = ["A Data Engineer.", "An AWS Specialist.", "A Cloud Builder."];
 
 function MainPage() {
-    const textRef = useRef(); // For ityped animation
-    const phrases = ["A Data Engineer", "An AWS Developer", "A Full Stack Developer"];
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-  
-    // Initialize ityped for the first greeting text
-    useEffect(() => {
-      init(textRef.current, {
-        showCursor: false,
-        loop: false,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 1500,
-        strings: ["Hello, World!"], // Replace with any greeting you prefer
-      });
-    }, []);
-  
-    // Manage transitions between phrases
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [isOut, setIsOut] = useState(false);
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setIsAnimating(true); // Start animation
-
+            setIsOut(true);
             setTimeout(() => {
-                // Move to the next phrase
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-                setIsAnimating(false); // End animation
-            }, 800); // Matches the animation duration
-
-        }, 4000); // Adjust timing for each phrase display
+                setRoleIndex(prev => (prev + 1) % ROLES.length);
+                setIsOut(false);
+            }, 500);
+        }, 3200);
 
         return () => clearInterval(interval);
-    }, [phrases.length]);
-  
-
-
-
+    }, []);
 
     return (
-        <section id='mainpage'>
-            <div className="mainpage">
-                <div className="left">
-                    <div className="imgContainer">
-                        <img src="assets/me.png" alt="Profile" />
-                    </div>
-                </div>
-                <div className="right">
-                    <h1 ref={textRef}></h1> {/* Animated "Hello, World!" or any greeting */}
-                    <div className="bottom">
-                    <h2>
-                        I'm Cris,
-                        <span className="text-wrapper">
-                            <span className={`current ${isAnimating ? 'animate-out' : 'animate-in'}`}>
-                                <strong>{phrases[currentIndex]}</strong>
-                            </span>
+        <section id="mainpage" className="hero">
+            <div className="hero__inner">
+                <div className="hero__copy">
+                    <span className="hero__eyebrow mono">
+                        <span className="hero__eyebrow-prompt">$</span> whoami
+                    </span>
+
+                    <h1 className="hero__title">
+                        Hi, I'm <span className="text-accent">Cristopher.</span>
+                    </h1>
+
+                    <h2 className="hero__role">
+                        I'm{' '}
+                        <span className={`hero__role-rotator ${isOut ? 'is-out' : ''}`}>
+                            <span className="text-accent">{ROLES[roleIndex]}</span>
                         </span>
                     </h2>
+
+                    <p className="hero__sub">
+                        Building AWS-native data platforms at NYCSBUS since 2022 &mdash;
+                        real-time, batch, and event-driven pipelines that turn operational
+                        data into decisions.
+                    </p>
+
+                    <div className="hero__ctas">
+                        <a href="#projects" className="btn btn--primary">
+                            View Projects <FiArrowRight />
+                        </a>
+                        <a
+                            href="assets/resume.pdf"
+                            download="CrisSoto.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn--ghost"
+                        >
+                            <FiDownload /> Download Resume
+                        </a>
+                        <a href="mailto:criscodesnyc@gmail.com" className="btn btn--ghost">
+                            <FiMail /> Get in Touch
+                        </a>
                     </div>
 
+                    <ul className="hero__pills">
+                        <li>AWS</li>
+                        <li>Python</li>
+                        <li>Airflow</li>
+                        <li>Lambda</li>
+                        <li>Kinesis</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <div className="hero__visual">
+                    <div className="hero__portrait">
+                        <div className="hero__portrait-ring" aria-hidden="true"></div>
+                        <div className="hero__portrait-glow" aria-hidden="true"></div>
+                        <img src="assets/me.png" alt="Cristopher Soto" />
+                    </div>
                 </div>
             </div>
         </section>

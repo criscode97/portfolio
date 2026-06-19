@@ -1,81 +1,109 @@
-.carousel-container {
-  // position: relative;
-  width: 100%;
-  height: fit-content;
-  overflow: visible; 
-}
+@import "../../global.scss";
 
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-.carousel-content {
-  display: flex;
-  overflow: visible;
-  width: 100%;
-  padding: 0 5vw;
-}
-
-// You can uncomment and modify as needed
-// .carousel-item {
-//   margin: 0 1vw;
-//   // flex: 1;
-//   // min-width: calc(100% / 4); // Default to 4 items per page
-// }
-
-.arrow {
-  background: none;
-  border: none;
-  color: grey;
-  font-size: 2rem;
-  cursor: pointer;
-
-  &.left {
-    position: absolute;
-    left: 0;
-  }
-
-  &.right {
-    position: absolute;
-    right: 1vw;
-  }
-}
-
-.dots-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
-  background-color: grey;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-
-  &.active {
-    background-color: black;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-
-  .carousel-content {
-    padding: 0 2vw; // Adjust padding on mobile
-  }
-
-  .carousel-item {
-    min-width: 100%; // Show one item per page on mobile
+.carousel {
     width: 100%;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
 
-  .arrow {
-    display: none;  // Hide arrows on mobile
-  }
+    &__wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__content {
+        flex: 1;
+        display: grid;
+        gap: 1.25rem;
+        align-items: stretch;
+        animation: carouselFade 0.4s ease;
+    }
+
+    &__item {
+        display: flex;
+        min-width: 0;
+
+        > * {
+            width: 100%;
+        }
+    }
+
+    &__arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+        cursor: pointer;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        &:hover:not(:disabled) {
+            color: var(--accent);
+            border-color: var(--accent);
+            background-color: var(--surface-2);
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    &__dot {
+        width: 1.5rem;
+        height: 3px;
+        border-radius: 999px;
+        background-color: var(--border-strong);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background-color 0.2s ease, width 0.2s ease;
+
+        &.is-active {
+            background: var(--gradient-accent);
+            width: 2.25rem;
+        }
+
+        &:hover {
+            background-color: var(--accent-2);
+        }
+    }
+}
+
+@keyframes carouselFade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+    .carousel {
+        &__wrapper {
+            gap: 0.5rem;
+        }
+
+        &__arrow {
+            display: none;
+        }
+    }
 }

@@ -1,40 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './navbar.scss';
 
 function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const toggleMenu = () => setIsMenuOpen(prev => !prev);
+    const closeMenu = () => setIsMenuOpen(false);
+
+    useEffect(() => {
+        const onScroll = () => setIsScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
-        <div className='navbar'>
+        <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+            <div className="navbar__inner">
+                <a href="#mainpage" className="brand" onClick={closeMenu}>
+                    <span className="brand__prompt">~/</span>
+                    <span className="brand__name">cristopher</span>
+                    <span className="brand__cursor">_</span>
+                </a>
 
-                <div className='left'>
-                    <a href="#mainpage" className='name'>
-                        Cristopher Soto 
+                <nav className={`nav ${isMenuOpen ? 'is-open' : ''}`}>
+                    <a href="#aboutme" onClick={closeMenu}>About</a>
+                    <a href="#projects" onClick={closeMenu}>Projects</a>
+                    <a href="#resume" onClick={closeMenu}>Resume</a>
+                    <a
+                        href="assets/resume.pdf"
+                        download="CrisSoto.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav__cta"
+                        onClick={closeMenu}
+                    >
+                        Resume.pdf
                     </a>
-                </div>
-                <div className={`right ${isMenuOpen ? 'active' : ''}`}>
-                    <div className='titles'>
-                        <a href="#aboutme" onClick={() => setIsMenuOpen(false)}>
-                            About Me
-                        </a>
-                        <a href="#projects" onClick={() => setIsMenuOpen(false)}>
-                            Projects 
-                        </a>
-                        <a href="#resume" onClick={() => setIsMenuOpen(false)}>
-                            Resume
-                        </a>
-                    </div>
-                </div>
-                <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                </nav>
+
+                <button
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+                    onClick={toggleMenu}
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isMenuOpen}
+                >
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
+        </header>
     );
 }
 

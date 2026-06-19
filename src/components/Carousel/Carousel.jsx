@@ -1,110 +1,108 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Carousel.scss'; // Make sure to create this CSS file
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import './Carousel.scss';
 
 function Carousel({ items = [] }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(4);
-  
-  // Using useRef for touch states to avoid re-renders
-  const touchStartXRef = useRef(0);
-  const touchEndXRef = useRef(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Update itemsPerPage based on screen width
-  useEffect(() => {
-    const updateItemsPerPage = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerPage(1);
-      } else {
-        setItemsPerPage(4);
-      }
+    const touchStartXRef = useRef(0);
+    const touchEndXRef = useRef(0);
+
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            const w = window.innerWidth;
+            if (w < 720) setItemsPerPage(1);
+            else if (w < 1100) setItemsPerPage(2);
+            else setItemsPerPage(3);
+        };
+
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+        return () => window.removeEventListener('resize', updateItemsPerPage);
+    }, []);
+
+    const totalPages = Math.max(1, Math.ceil(items.length / itemsPerPage));
+
+    useEffect(() => {
+        if (currentIndex > totalPages - 1) setCurrentIndex(0);
+    }, [currentIndex, totalPages]);
+
+    const nextSlide = () => {
+        setCurrentIndex(prev => (prev === totalPages - 1 ? 0 : prev + 1));
     };
 
-    updateItemsPerPage();
-    window.addEventListener('resize', updateItemsPerPage);
-    return () => window.removeEventListener('resize', updateItemsPerPage);
-  }, []);
+    const prevSlide = () => {
+        setCurrentIndex(prev => (prev === 0 ? totalPages - 1 : prev - 1));
+    };
 
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+    const handleDotClick = index => setCurrentIndex(index);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === totalPages - 1 ? 0 : prevIndex + 1
-    );
-  };
+    const handleTouchStart = e => {
+        touchStartXRef.current = e.changedTouches[0].screenX;
+    };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalPages - 1 : prevIndex - 1
-    );
-  };
+    const handleTouchEnd = e => {
+        touchEndXRef.current = e.changedTouches[0].screenX;
+        if (touchEndXRef.current < touchStartXRef.current - 50) nextSlide();
+        if (touchEndXRef.current > touchStartXRef.current + 50) prevSlide();
+    };
 
-  const handleDotClick = (index) => {
-    setCurrentIndex(index);
-  };
+    const startIndex = currentIndex * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const visibleItems = items.slice(startIndex, endIndex);
 
-  // Swipe handlers using useRef for touch positions
-  const handleTouchStart = (e) => {
-    touchStartXRef.current = e.changedTouches[0].screenX;
-  };
+    return (
+        <div className="carousel">
+            <div className="carousel__wrapper">
+                <button
+                    className="carousel__arrow carousel__arrow--left"
+                    onClick={prevSlide}
+                    aria-label="Previous page"
+                    disabled={totalPages <= 1}
+                >
+                    <FiChevronLeft />
+                </button>
 
-  const handleTouchEnd = (e) => {
-    touchEndXRef.current = e.changedTouches[0].screenX;
-    handleGesture();
-  };
+                <div
+                    className="carousel__content"
+                    style={{
+                        gridTemplateColumns: `repeat(${itemsPerPage}, minmax(0, 1fr))`,
+                    }}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    {visibleItems.map((item, index) => (
+                        <div className="carousel__item" key={`${currentIndex}-${index}`}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
 
-  const handleGesture = () => {
-    if (touchEndXRef.current < touchStartXRef.current - 50) {
-      nextSlide();
-    }
-
-    if (touchEndXRef.current > touchStartXRef.current + 50) {
-      prevSlide();
-    }
-  };
-
-  const renderDots = () => {
-    let dots = [];
-    for (let i = 0; i < totalPages; i++) {
-      dots.push(
-        <span
-          key={i}
-          className={`dot ${currentIndex === i ? 'active' : ''}`}
-          onClick={() => handleDotClick(i)}
-        ></span>
-      );
-    }
-    return dots;
-  };
-
-  // Calculate the items to display
-  const startIndex = currentIndex * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const visibleItems = items.slice(startIndex, endIndex);
-
-  return (
-    <div className="carousel-container">
-      <div className="carousel-wrapper">
-        <button className="arrow left" onClick={prevSlide}>
-          &#10094;
-        </button>
-        <div
-          className="carousel-content"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {visibleItems.map((item, index) => (
-            <div className="carousel-item" key={index}>
-              {item}
+                <button
+                    className="carousel__arrow carousel__arrow--right"
+                    onClick={nextSlide}
+                    aria-label="Next page"
+                    disabled={totalPages <= 1}
+                >
+                    <FiChevronRight />
+                </button>
             </div>
-          ))}
+
+            {totalPages > 1 && (
+                <div className="carousel__dots">
+                    {Array.from({ length: totalPages }).map((_, i) => (
+                        <button
+                            key={i}
+                            className={`carousel__dot ${currentIndex === i ? 'is-active' : ''}`}
+                            onClick={() => handleDotClick(i)}
+                            aria-label={`Go to page ${i + 1}`}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
-        <button className="arrow right" onClick={nextSlide}>
-          &#10095;
-        </button>
-      </div>
-      <div className="dots-container">{renderDots()}</div>
-    </div>
-  );
+    );
 }
 
 export default Carousel;
