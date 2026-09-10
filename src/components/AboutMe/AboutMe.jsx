@@ -11,8 +11,8 @@ function AboutMe() {
 
     const stats = [
         { value: "4+", label: "Years building on AWS" },
-        { value: "15+", label: "AWS services in production" },
-        { value: "AWS", label: "Certified Data Engineer" },
+        { value: "2x", label: "AWS certifications" },
+        { value: "757", label: "Data Engineer exam score" },
         { value: "24/7", label: "Real-time pipelines" },
     ];
 
@@ -32,17 +32,17 @@ function AboutMe() {
                         <p>
                             I design and build AWS-native data platforms &mdash; event-driven
                             pipelines on <strong>Lambda</strong>, <strong>Kinesis</strong>, and{' '}
-                            <strong>SES</strong>, geospatial batch jobs orchestrated in{' '}
+                            <strong>SES</strong>, geospatial jobs in{' '}
                             <strong>Apache Airflow</strong>, and analytics warehouses on{' '}
                             <strong>Aurora PostgreSQL</strong> modeled with star schemas.
                         </p>
                         <p>
                             At <strong>NYCSBUS</strong> I've shipped real-time parent
-                            notifications for school-bus proximity alerts, OCR document
-                            processing with <strong>Textract</strong> + <strong>Tesseract</strong>,
-                            and a custom call-center platform on <strong>Amazon Connect</strong>{' '}
-                            &mdash; all instrumented with <strong>CloudWatch</strong> dashboards
-                            and <strong>SNS</strong> alerting.
+                            notifications for school-bus proximity alerts, auto-scaling OCR
+                            with <strong>Textract</strong> + <strong>Tesseract</strong>, and a
+                            custom CRM / call-center on <strong>Amazon Connect</strong> with
+                            Amplify agent tools &mdash; monitored through{' '}
+                            <strong>CloudWatch</strong> and <strong>SNS</strong>.
                         </p>
                         <p>
                             I like turning messy operational data into reliable,

@@ -5,16 +5,16 @@ import Carousel from "../Carousel/Carousel";
 const projects = [
     {
         title: 'AWS ETL Pipeline',
-        description: 'Apache Airflow DAGs ingesting NYC bus data into Postgres for weekly operational reports.',
-        tech: ['Airflow', 'AWS', 'Python', 'PostgreSQL'],
+        description: 'Apache Airflow ETL on Amazon S3, Boto3, and PostgreSQL on RDS, with an interactive Dash dashboard on Heroku.',
+        tech: ['Airflow', 'S3', 'PostgreSQL', 'Dash'],
         image: '/assets/nycbusdag.gif',
         code: 'https://github.com/criscode97/nycbus-airflow-pipeline',
         demo: 'https://nycbusweeklyreport.herokuapp.com/',
     },
     {
-        title: 'Data Visualization App',
-        description: 'Interactive Flask + Plotly app that surfaces US Census first-name frequency over time.',
-        tech: ['Python', 'Flask', 'Plotly', 'Pandas'],
+        title: 'Name Querying & Visualization',
+        description: 'Web app analyzing Social Security name data from 1910 to present, with Plotly choropleth and time-series charts.',
+        tech: ['Python', 'Plotly', 'Heroku', 'Pandas'],
         image: '/assets/howcommonismyname.gif',
         code: 'https://github.com/criscode97/HowCommonIsMyName-repo',
         demo: 'http://howcommonismyname.herokuapp.com',

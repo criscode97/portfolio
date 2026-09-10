@@ -2,42 +2,32 @@ import "./skills.scss";
 
 const categories = [
     {
-        title: "Cloud & AWS",
+        title: "Cloud Platforms & Services",
         icon: "assets/icons/awsicon.png",
         skills: [
-            "Lambda", "Glue", "EMR", "Kinesis", "S3", "SES", "SNS",
-            "CloudWatch", "Cognito", "CloudFormation", "Amplify",
-            "Textract", "Connect", "DynamoDB", "Pinpoint", "RDS",
+            "Lambda", "Amplify", "Connect", "CloudFormation", "Cognito",
+            "Kinesis", "S3", "SES", "SNS", "CloudWatch", "Textract",
+            "Glue", "EMR",
         ],
     },
     {
-        title: "Data & Warehousing",
+        title: "Databases & Warehousing",
         icon: "assets/icons/postgresqlicon.png",
         skills: [
-            "PostgreSQL", "Aurora", "Redshift", "DynamoDB",
-            "Star-schema modeling", "SQLite",
+            "PostgreSQL", "Amazon Aurora", "DynamoDB", "Amazon Redshift",
         ],
     },
     {
-        title: "Data Engineering",
+        title: "Frameworks & Tools",
         icon: "assets/icons/airflow_transparent.png",
         skills: [
-            "Apache Airflow", "Apache Spark", "Tesseract OCR",
-            "ETL / ELT", "Streaming", "Event-driven",
+            "React", "Apache Airflow", "Tesseract", "Google Sheets",
         ],
     },
     {
-        title: "Languages",
+        title: "Programming Languages",
         icon: "assets/icons/pythonicon.png",
         skills: ["Python", "SQL", "JavaScript"],
-    },
-    {
-        title: "Frontend & Tools",
-        icon: "assets/icons/reacticon.png",
-        skills: [
-            "React", "Sass", "HTML", "CSS",
-            "Bootstrap", "Git", "GitHub",
-        ],
     },
 ];
 
